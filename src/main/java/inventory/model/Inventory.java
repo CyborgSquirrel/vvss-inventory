@@ -5,7 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Inventory {
-    
+
     // Declare fields
     private ObservableList<Product> products;
     private ObservableList<Part> allParts;
@@ -21,20 +21,20 @@ public class Inventory {
     // Declare methods
     /**
      * Add new product to observable list products
-     * @param product 
+     * @param product
      */
     public void addProduct(Product product) {
         products.add(product);
     }
-    
+
     /**
      * Remove product from observable list products
-     * @param product 
+     * @param product
      */
     public void removeProduct(Product product) {
         products.remove(product);
     }
-    
+
     /**
      * Accepts search parameter and if an ID or name matches input, that product is returned
      * @param searchItem
@@ -46,19 +46,19 @@ public class Inventory {
         }
         return null;
     }
-    
+
     /**
      * Update product at given index
      * @param index
-     * @param product 
+     * @param product
      */
     public void updateProduct(int index, Product product) {
         products.set(index, product);
     }
-    
+
     /**
      * Getter for Product Observable List
-     * @return 
+     * @return
      */
     public ObservableList<Product> getProducts() {
         return products;
@@ -67,27 +67,27 @@ public class Inventory {
     public void setProducts(ObservableList<Product> list) {
         products=list;
     }
-    
+
     /**
      * Add new part to observable list allParts
-     * @param part 
+     * @param part
      */
     public void addPart(Part part) {
         allParts.add(part);
     }
-    
+
     /**
      * Removes part passed as parameter from allParts
-     * @param part 
+     * @param part
      */
     public void deletePart(Part part) {
         allParts.remove(part);
     }
-    
+
     /**
      * Accepts search parameter and if an ID or name matches input, that part is returned
      * @param searchItem
-     * @return 
+     * @return
      */
     public Part lookupPart(String searchItem) {
         for(Part p:allParts) {
@@ -103,19 +103,19 @@ public class Inventory {
         }
         return null;
     }
-    
+
     /**
      * Update part at given index
      * @param index
-     * @param part 
+     * @param part
      */
     public void updatePart(int index, Part part) {
         allParts.set(index, part);
     }
-    
+
     /**
      * Getter for allParts Observable List
-     * @return 
+     * @return
      */
     public ObservableList<Part> getAllParts() {
         return allParts;
@@ -128,21 +128,21 @@ public class Inventory {
     public void setAllParts(ObservableList<Part> list) {
         allParts=list;
     }
-    
+
     /**
      * Method for incrementing part ID to be used to automatically
      * assign ID numbers to parts
-     * @return 
+     * @return
      */
     public int getAutoPartId() {
         autoPartId++;
         return autoPartId;
     }
-    
+
     /**
      * Method for incrementing product ID to be used to automatically
      * assign ID numbers to products
-     * @return 
+     * @return
      */
     public int getAutoProductId() {
         autoProductId++;
@@ -157,5 +157,5 @@ public class Inventory {
     public void setAutoProductId(int id){
         autoProductId=id;
     }
-    
+
 }

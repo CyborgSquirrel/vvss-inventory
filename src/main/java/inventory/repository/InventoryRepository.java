@@ -18,6 +18,13 @@ public class InventoryRepository {
 		readProducts();
 	}
 
+	public InventoryRepository(String filename) {
+		InventoryRepository.filename = filename;
+		this.inventory = new Inventory();
+		readParts();
+		readProducts();
+	}
+
 	public void readParts(){
 		File file = new File(filename);
 		ObservableList<Part> listP = FXCollections.observableArrayList();
