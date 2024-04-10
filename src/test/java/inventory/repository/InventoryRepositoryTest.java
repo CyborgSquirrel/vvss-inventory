@@ -2,6 +2,7 @@ package inventory.repository;
 
 import inventory.model.OutsourcedPart;
 import inventory.model.Part;
+import org.junit.Test;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,13 +10,17 @@ import static org.junit.jupiter.api.Assertions.*;
 class InventoryRepositoryTest {
 
     @Test
+    @RepeatedTest(1)
     @Timeout(10)
     @Disabled
     void addPart1_ECP() {
         InventoryRepository repo = new InventoryRepository();
         Part part = new OutsourcedPart(0, "Screwdrivah", 2012, 1, 1, 2, "asd");
+        String validation_message = Part.isValidPart(part.getName(), part.getPrice(), part.getInStock(), part.getMin(), part.getMax(), "");
         int prev_size = repo.getAllParts().size();
-        repo.addPart(part);
+        if(validation_message.isEmpty()) {
+            repo.addPart(part);
+        }
         assert(repo.getAllParts().size() == prev_size + 1);
     }
 
@@ -25,17 +30,22 @@ class InventoryRepositoryTest {
     void addPart2_ECP() {
         InventoryRepository repo = new InventoryRepository();
         Part part = new OutsourcedPart(0, "Bolt2", 20122, 12, 12, 32, "asd");
+        String validation_message = Part.isValidPart(part.getName(), part.getPrice(), part.getInStock(), part.getMin(), part.getMax(), "");
+
         int prev_size = repo.getAllParts().size();
-        repo.addPart(part);
+        if(validation_message.isEmpty()) {
+            repo.addPart(part);
+        }
         assert(repo.getAllParts().size() == prev_size + 1);
     }
 
     @Test
+    @RepeatedTest(1)
     @DisplayName("test 3 ECP")
     @Disabled
     void addPart3_ECP() {
         InventoryRepository repo = new InventoryRepository();
-        Part part = new OutsourcedPart(0, "", 2012, 1, 1, 2, "asd");
+        Part part = new OutsourcedPart(0, "Screwdrivah", 20122, -8, 12, 32, "asd");
         String validation_message = Part.isValidPart(part.getName(), part.getPrice(), part.getInStock(), part.getMin(), part.getMax(), "");
 
         int prev_size = repo.getAllParts().size();
@@ -43,25 +53,26 @@ class InventoryRepositoryTest {
             repo.addPart(part);
         }
 
-        assert(repo.getAllParts().size() == prev_size + 1);
+        assert(repo.getAllParts().size() == prev_size);
     }
 
     @Test
+    @RepeatedTest(1)
     @Disabled
     void addPart4_ECP() {
         InventoryRepository repo = new InventoryRepository();
-        Object not_a_number = "";
-        if(not_a_number.equals("")) {
-            assert false;
-        }
-        not_a_number = 0;
-        Part part = new OutsourcedPart(0, "Bolt2", 20122, (Integer)not_a_number, 12, 32, "asd");
+        Part part = new OutsourcedPart(0, "Bolt2", -3, 12, 12, 32, "asd");
         int prev_size = repo.getAllParts().size();
-        repo.addPart(part);
-        assert(repo.getAllParts().size() == prev_size + 1);
+
+        String validation_message = Part.isValidPart(part.getName(), part.getPrice(), part.getInStock(), part.getMin(), part.getMax(), "");
+        if(validation_message.isEmpty()) {
+            repo.addPart(part);
+        }
+        assert(repo.getAllParts().size() == prev_size);
     }
 
     @Test
+    @RepeatedTest(1)
     @Timeout(10)
     @Tag("not_exec-able")
     @Disabled
@@ -69,11 +80,16 @@ class InventoryRepositoryTest {
         InventoryRepository repo = new InventoryRepository();
         Part part = new OutsourcedPart(0, "", 2012, 1, 1, 2, "asd");
         int prev_size = repo.getAllParts().size();
-        repo.addPart(part);
-        assert(repo.getAllParts().size() == prev_size + 1);
+        String validation_message = Part.isValidPart(part.getName(), part.getPrice(), part.getInStock(), part.getMin(), part.getMax(), "");
+
+        if(validation_message.isEmpty()) {
+            repo.addPart(part);
+        }
+        assert(repo.getAllParts().size() == prev_size);
     }
 
     @Test
+    @RepeatedTest(1)
     @Timeout(10)
     @Disabled
     void addPart2_BVA() {
@@ -85,6 +101,7 @@ class InventoryRepositoryTest {
     }
 
     @Test
+    @RepeatedTest(1)
     @Timeout(10)
     @Tag("not_exec-able")
     @Disabled
@@ -97,10 +114,11 @@ class InventoryRepositoryTest {
         if(validation_message.isEmpty()) {
             repo.addPart(part);
         }
-        assert(repo.getAllParts().size() == prev_size + 1);
+        assert(repo.getAllParts().size() == prev_size);
     }
 
     @Test
+    @RepeatedTest(1)
     @Timeout(10)
     @Disabled
     void addPart4_BVA() {
