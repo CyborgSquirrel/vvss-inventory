@@ -64,4 +64,21 @@ public class InventoryService {
         repo.deleteProduct(product);
     }
 
+    public Part findAPartWithTheSameNameAsThisOne(Part part) {
+        for (Part part1 : this.repo.getAllParts()) {
+            if (part1.getName().equals(part.getName())) {
+                return part1;
+            }
+        }
+        return null;
+    }
+
+    public Part findAPartWithTheSamePriceAsThisOne(Part part) {
+        for (Part part1 : this.repo.getAllParts()) {
+            if (part1.getPrice() == part.getPrice()) {
+                return part1;
+            }
+        }
+        return null;
+    }
 }
