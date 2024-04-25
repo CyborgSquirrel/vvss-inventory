@@ -2,7 +2,7 @@ package inventory.repository;
 
 import inventory.model.InhousePart;
 import inventory.model.OutsourcedPart;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.mockito.Mockito;
 
 import java.io.IOException;
