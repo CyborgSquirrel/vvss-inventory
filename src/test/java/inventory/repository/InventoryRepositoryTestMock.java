@@ -12,9 +12,13 @@ import java.nio.file.Path;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class InventoryRepositoryTestMock {
+public class InventoryRepositoryTestMock {
+    public InventoryRepositoryTestMock() {
+
+    }
+
     @Test
-    void mockOutsourcedPart() throws IOException {
+    public void mockOutsourcedPart() throws IOException {
         String fileName = "data/mosqito.txt";
         String toString = "alpaca SRL";
 
@@ -29,7 +33,7 @@ class InventoryRepositoryTestMock {
     }
 
     @Test
-    void mockInhousePart() throws IOException {
+    public void mockInhousePart() throws IOException {
         String fileName = "data/mosqito.txt";
         String toString = "mosquisos";
 

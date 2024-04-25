@@ -15,11 +15,13 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class InventoryServiceIntegrationTest {
+public class InventoryServiceIntegrationTest {
+    public InventoryServiceIntegrationTest() {
 
+    }
 
     @Test
-    void findAPartWithTheSameNameAsThisOne() {
+    public void findAPartWithTheSameNameAsThisOne() {
         InventoryRepository inventoryRepository = new InventoryRepository("data/mokko.txt");
         InventoryService inventoryService = new InventoryService(inventoryRepository);
         inventoryService.addInhousePart("Legionnaire's Shield Generator", 499.99, 100, 20, 200, 101);
@@ -31,7 +33,7 @@ class InventoryServiceIntegrationTest {
     }
 
     @Test
-    void findAPartWithTheSamePriceAsThisOne() {
+    public void findAPartWithTheSamePriceAsThisOne() {
         InventoryRepository inventoryRepository = new InventoryRepository("data/mokko.txt");
         InventoryService inventoryService = new InventoryService(inventoryRepository);
         inventoryService.addInhousePart("Legionnaire's Shield Generator", 499.99, 100, 20, 200, 101);
@@ -42,7 +44,7 @@ class InventoryServiceIntegrationTest {
         Mockito.verify(inhousePart, Mockito.atLeastOnce()).getPrice();
     }
     @Test
-    void findAPartWithTheSameNameAsThisOneNotMock() {
+    public void findAPartWithTheSameNameAsThisOneNotMock() {
         InventoryRepository inventoryRepository = new InventoryRepository("data/mokko.txt");
         InventoryService inventoryService = new InventoryService(inventoryRepository);
         inventoryService.addInhousePart("Legionnaire's Shield Generator", 499.99, 100, 20, 200, 101);
@@ -54,7 +56,7 @@ class InventoryServiceIntegrationTest {
     }
 
     @Test
-    void findAPartWithTheSamePriceAsThisOneNotMock() {
+    public void findAPartWithTheSamePriceAsThisOneNotMock() {
         InventoryRepository inventoryRepository = new InventoryRepository("data/mokko.txt");
         InventoryService inventoryService = new InventoryService(inventoryRepository);
         inventoryService.addInhousePart("Legionnaire's Shield Generator", 499.99, 100, 20, 200, 101);

@@ -4,10 +4,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class OutsourcedPartTest {
+public class OutsourcedPartTest {
+    public OutsourcedPartTest() {
+
+    }
 
     @Test
-    void getCompanyName() {
+    public void getCompanyName() {
         OutsourcedPart outsourcedPart = new OutsourcedPart(1,
                 "n-ai carte n-ai parte",
                 10.1,
@@ -19,7 +22,7 @@ class OutsourcedPartTest {
     }
 
     @Test
-    void setCompanyName() {
+    public void setCompanyName() {
         OutsourcedPart outsourcedPart = new OutsourcedPart(1,
                 "n-ai carte n-ai parte",
                 10.1,

@@ -8,7 +8,10 @@ import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class InventoryRepositoryTest {
+public class InventoryRepositoryTest {
+    public InventoryRepositoryTest() {
+
+    }
 
     @Test
     @RepeatedTest(1)

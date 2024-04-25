@@ -14,10 +14,12 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class InventoryServiceTest {
+public class InventoryServiceTest {
+    public InventoryServiceTest() {
 
+    }
     @Test
-    void getAllParts() {
+    public void getAllParts() {
         ArrayList<Part> partsList = new ArrayList<>();
 
         // Adding some parts with Indian-inspired names to the list
@@ -40,7 +42,7 @@ class InventoryServiceTest {
     }
 
     @Test
-    void lookupPart() {
+    public void lookupPart() {
         ArrayList<Part> partsList = new ArrayList<>();
 
         OutsourcedPart thePart = new OutsourcedPart(3, "Apocalypse Cannon", 1945.75, 200, 50, 500, "Doomsday Arms Inc.");
