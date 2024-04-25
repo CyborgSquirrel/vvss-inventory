@@ -13,7 +13,6 @@ class InventoryRepositoryTest {
     @Test
     @RepeatedTest(1)
     @Timeout(10)
-    @Disabled
     void addPart1_ECP() {
         InventoryRepository repo = new InventoryRepository();
         Part part = new OutsourcedPart(0, "Screwdrivah", 2012, 1, 1, 2, "asd");
@@ -27,7 +26,6 @@ class InventoryRepositoryTest {
 
     @Test
     @RepeatedTest(2)
-    @Disabled
     void addPart2_ECP() {
         InventoryRepository repo = new InventoryRepository();
         Part part = new OutsourcedPart(0, "Bolt2", 20122, 12, 12, 32, "asd");
@@ -43,7 +41,6 @@ class InventoryRepositoryTest {
     @Test
     @RepeatedTest(1)
     @DisplayName("test 3 ECP")
-    @Disabled
     void addPart3_ECP() {
         InventoryRepository repo = new InventoryRepository();
         Part part = new OutsourcedPart(0, "Screwdrivah", 20122, -8, 12, 32, "asd");
@@ -59,7 +56,6 @@ class InventoryRepositoryTest {
 
     @Test
     @RepeatedTest(1)
-    @Disabled
     void addPart4_ECP() {
         InventoryRepository repo = new InventoryRepository();
         Part part = new OutsourcedPart(0, "Bolt2", -3, 12, 12, 32, "asd");
@@ -76,7 +72,6 @@ class InventoryRepositoryTest {
     @RepeatedTest(1)
     @Timeout(10)
     @Tag("not_exec-able")
-    @Disabled
     void addPart1_BVA() {
         InventoryRepository repo = new InventoryRepository();
         Part part = new OutsourcedPart(0, "", 2012, 1, 1, 2, "asd");
@@ -92,7 +87,6 @@ class InventoryRepositoryTest {
     @Test
     @RepeatedTest(1)
     @Timeout(10)
-    @Disabled
     void addPart2_BVA() {
         InventoryRepository repo = new InventoryRepository();
         Part part = new OutsourcedPart(0, "M", 20, 3, 10, 30, "asd");
@@ -105,7 +99,6 @@ class InventoryRepositoryTest {
     @RepeatedTest(1)
     @Timeout(10)
     @Tag("not_exec-able")
-    @Disabled
     void addPart3_BVA() {
         InventoryRepository repo = new InventoryRepository();
         Part part = new OutsourcedPart(0, "Screwdrivah", 2012, 0, 1, 2, "asd");
@@ -121,7 +114,6 @@ class InventoryRepositoryTest {
     @Test
     @RepeatedTest(1)
     @Timeout(10)
-    @Disabled
     void addPart4_BVA() {
         InventoryRepository repo = new InventoryRepository();
         Part part = new OutsourcedPart(0, "M", 49, 3, 10, 30, "asd");
